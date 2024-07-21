@@ -2,8 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+.height{
+    height: calc(100-48px);
+}
 
-
+.bike-image {
+    width: 490px; /* Adjust the size as needed */
+    height: auto;
+    
+  }
+  .prebook-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ff6347; /* Change to desired color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    transition-duration: 1s;
+  }
+  .prebook-button:hover {
+    background-color: #1b116b; /* Change to desired hover color */
+  }
 .h1rhyno{
 @apply opacity-0
 }
