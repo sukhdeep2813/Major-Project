@@ -28,6 +28,16 @@
   .prebook-button:hover {
     background-color: #1b116b; /* Change to desired hover color */
   }
+.card{
+ width: 474px;
+ height: 350px;
+ background-color: rgb(20, 19, 19);
+ border-radius: 15px;
+ box-sizing: 10px 15px #2b2929;
+    
+
+
+}
 .h1rhyno{
 @apply opacity-0
 }
