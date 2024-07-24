@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add any global styles you want */
+
+
+
 .height{
     height: calc(100-48px);
 }
@@ -12,7 +16,7 @@
     
   }
   .prebook-button {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     right: 20px;
     padding: 10px 20px;
@@ -29,15 +33,47 @@
     background-color: #1b116b; /* Change to desired hover color */
   }
 .card{
- width: 474px;
+ width: 447px;
  height: 350px;
- background-color: rgb(20, 19, 19);
+ background-color: #100c08;
  border-radius: 15px;
- box-sizing: 10px 15px #2b2929;
-    
+ box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
 
+/*cards bike gp*/
+.gp{
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background-color:  #CBD5E1;
 
 }
+.speed{
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  
+}
+.tyre{
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+/**/
+
+.text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border-radius: 5px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+}
+.smallportion{
+  background-color:  #808080;
+  height: 50%;
+  width: 100%;
+  
+}
+
 .h1rhyno{
 @apply opacity-0
 }
