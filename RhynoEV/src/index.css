@@ -69,9 +69,13 @@
 }
 .smallportion{
   background-color:  #808080;
-  height: 50%;
-  width: 100%;
+
   
+ 
+  
+}
+.p{
+  @apply opacity-0
 }
 
 .h1rhyno{
