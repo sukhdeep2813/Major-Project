@@ -74,6 +74,9 @@
  
   
 }
+.footer{
+  background-color: #252525;
+}
 .p{
   @apply opacity-0
 }

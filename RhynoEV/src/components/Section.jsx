@@ -2,12 +2,18 @@ import React, { useEffect } from 'react';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Material from './Material';
+import Carousel from './Carousel';
 
 
 
 
 
 const Section = () => {
+  const images = [
+    '/bike.png',
+    '/blue.png',
+    '/black.png',
+  ];
 
   useGSAP(() => {
     gsap.to("#h1", {
@@ -83,12 +89,12 @@ const Section = () => {
             <br />Where Superiority Meets Style.
           </p>
         </h1>
-
-        <div className='carousel flex overflow-hidden relative mt-10'>
-          <img src='/bike.png' alt='Bike 1' className='carousel-image w-1/3 bike-image' />
-          <img src='/blue.png' alt='Bike 2' className='carousel-image w-1/3 bike-image' />
-          <img src='/black.png' alt='Bike 3' className='carousel-image w-1/3 bike-image' />
+      
+      <div className='flex justify-center items-center'>
+        <div className='rounded-5xl w-2/4'>
+          <Carousel images={images} interval={3000}/>
         </div>
+      </div>
 
         <button className='prebook-button z-10'>
           Pre-book

@@ -2,6 +2,8 @@ import { Button, Text, Checkbox, FormControl, FormErrorMessage, FormLabel, Input
 import React from 'react';
 import { Field, Form, Formik } from 'formik';
 import { object, string } from 'yup';
+import Footer from './Footer';
+import Carousel from './Carousel';
 
 const signupValidationSchema = object({
   name: string().required("Name is required"),
@@ -11,20 +13,39 @@ const signupValidationSchema = object({
 });
 
 const Material = () => {
+  const images = [
+    '/rhyno final.95.png',
+    '/black.png'
+    
+  ];
+  const images2 = [
+     "/final design try 2 cross view.178.png",
+     "/golden.png"
+  ];
+  const images3 =[
+    "/bike.png",
+    "/black.png",
+    "/golden.png",
+    "/blue.png"
+  ];
   return (
     <div className='flex items-center justify-center'>
       <div className='flex flex-col items-center'>
         <div className='flex items-center justify-center w-full'>
-          <h1 className='text-3xl mt-4 font-bold m-4 mb-12 text-center'>
-            Transforming India's New Face
+          <h1 className='text-3xl mt-4 font-bold m-4 mb-12 text-center font-lato'>
+            Transforming India's New Face<span className='text-purple-900'>
+             <br/>with Rhyno EV
+            </span>
+           
           </h1>
         </div>
         <div className='h-full w-4/5 mb-10 cursor-pointer'>
           <img src='/grp.png' className='gp rounded-3xl' alt="Group" />
         </div>
         <div className='flex flex-1 p-2 m-8 space-x-6 max-w-7xl'>
-          <div><img src='/rhyno final.95.png' className='tyre rounded-lg bg-zinc-800' alt="Tyre" /></div>
-          <div><img src='/black.png' className='speed rounded-lg bg-zinc-800' alt="Speed" /></div>
+          
+          <div className='tyre bg-slate-950 rounded-md'><Carousel images={images} interval={3000}/></div>
+          <div className='speed rounded-md bg-slate-950'><Carousel images={images2} interval={4000}/></div>
         </div>
         <div className='flex flex-1 smallportion p-24 w-full mb-8 bg-gray-300 space-x-20 justify-center'>
           <div className='flex-col p-3'>
@@ -48,9 +69,11 @@ const Material = () => {
             <p className='mt-2 text-gray-600'>No more Carrying Bulky Chargers</p>
           </div>
         </div>
-        <div className='flex flex-1 space-x-9 h-full rounded-xl bg-slate-500'>
-          <div className='place-items-center speed rou  items-center justify-center bg-slate-800'>
-             <img src='/black.png' className='h-40 w-full mt-40 '/>
+        <div className='flex flex-1 space-x-9 h-full rounded-xl bg-slate-500 mb-5'>
+          <div className='place-items-center speed rou  items-center justify-center bg-zinc-900'>
+           <div className=''>
+              <Carousel images={images3} interval={2000}/>      
+           </div>
           </div>
           <div className='p-8 '>
             <Formik
@@ -68,6 +91,7 @@ const Material = () => {
               {() => (
                 <Form>
                   <Stack mt="10" spacing={6}>
+                    <p className='font-bold text-xl text-center mt- 5'>Book Now</p>
                     <Field name="name">
                       {({ field, meta }) => (
                         <FormControl isInvalid={!!(meta.error && meta.touched)}>
@@ -121,6 +145,7 @@ const Material = () => {
             </Formik>
           </div>
         </div>
+        <Footer/>
       </div>
     </div>
   );
