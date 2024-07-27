@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-center mt-4">
-          <p className="text-gray-950">&copy; 2024 SkillTank. All rights reserved.</p>
+          <p className="text-gray-950">&copy; 2024 Rhyno EV. All rights reserved.</p>
         </div>
       </div>
     </section>
