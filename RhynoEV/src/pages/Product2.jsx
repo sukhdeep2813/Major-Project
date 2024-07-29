@@ -24,7 +24,7 @@ const Product2 = () => {
     <div className="w-full h-full rounded overflow-hidden shadow-lg">
       <Navbar />
 
-      <div className="flex flex-col md:flex-row bg-black text-white bg-black-200">
+      <div className="flex flex-col md:flex-row bg-black text-white bg-black-200  ">
         <div className="w-full md:w-1/2 p-5 flex flex-col justify-center ">
           <div className="px-6 py-4">
             <div className="font-bold text-5xl mb-2 font-calibri  text-white-200">Rhyno SE03 Lite</div>
@@ -75,10 +75,10 @@ const Product2 = () => {
 
        <div className='flex h-full'>
 
-          <div className='w-3/12'>
+          <div className='w-64'>
             <p className='left-2 p-3 text-3xl  font-bold font-calibri'>SE03 Lite</p>
           </div>
-          <div className='ml-28 mt-20 w-4/5 '>
+          <div className=' mt-20 w-4/5 max-w-5xl '>
             <Table/>
           </div>
 

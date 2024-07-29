@@ -81,10 +81,10 @@ const Section = () => {
 
   return (
     <>
-    <section className='bg-slate-950 w-full justify-center'>
-      <div className='h-auto'>
-        <h1 className='justify-center text-center text-white text-3xl'>
-          <p className='pt-40 h1rhyno' id='h1'>
+    <section className='bg-slate-950 w-full justify-center '>
+      <div className='h-auto '>
+        <h1 className='justify-center text-center text-white text-3xl '>
+          <p className='pt-40 h1rhyno text-white-100 ' id='h1'>
             Let's Elevate Your Ride Experience With Rhyno– 
             <br />Where Superiority Meets Style.
           </p>
@@ -103,7 +103,7 @@ const Section = () => {
         <div className='flex flex-1'>
          
        
-          <div className='m-9 flex justify-center items-center'>
+          <div className='m-9 flex justify-center items-center '>
             <div className='relative card hover:cursor-pointer'>
               <img
                 src='/Copy of final design try 2 cross view.182.png'
@@ -111,7 +111,7 @@ const Section = () => {
                 alt='LFP Battery'
               />
               <div className='absolute bottom-11 left-0 p-4 bg-opacity-50 text-white w-full  '>
-                <p className='text-sm'>
+                <p className='text-sm text-white-100'>
                   LFPBattery : Rhyno is equipped with Lithium Iron Phosphate (LFP) batteries,
                   renowned for their safety features—eliminating the risk of fire associated with other
                   Lithium batteries. These batteries boast a broader temperature range, ideal for the
@@ -134,7 +134,7 @@ const Section = () => {
                 alt='LFP Battery'
               />
               <div className='absolute bottom-32 left-0 p-4 bg-opacity-50 text-white w-full'>
-                <p className='text-sm '>
+                <p className='text-sm text-white-100'>
                 Wider tyres : Now, say goodbye to skidding and embrace the leaning turns!
                 Featuring first-of-its-kind, 9.5-inch wider tyres that make this machine an enormous
                 beast that ensures stability on different terrains such as wet roads, mud, and sand
@@ -151,7 +151,7 @@ const Section = () => {
                 alt='LFP Battery'
               />
               <div className='absolute bottom-28   left-0 p-4 bg-opacity-50 text-white w-full'>
-                <p className='text-sm'>
+                <p className='text-sm text-white-100'>
                 Range prediction: Many budget-friendly electric scooters overlook this crucial
                 feature, causing riders to experience range anxiety. With Rhyno, you can ride with
                 peace of mind, thanks to the scooter providing precise information about the

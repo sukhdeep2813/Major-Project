@@ -71,10 +71,10 @@ const Product1 = () => {
 
        <div className='flex h-full'>
 
-          <div className='w-3/12'>
-            <p className='left-2 p-3 text-3xl  font-bold font-calibri'>SE03 Lite</p>
+          <div className='w-64'>
+            <p className='left-2 p-3 text-3xl  font-bold font-calibri md:p-1 '>SE03 Lite</p>
           </div>
-          <div className='ml-28 mt-20 w-4/5 '>
+          <div className='mt-20 w-4/5 max-w-5xl '>
             <Table/>
           </div>
 

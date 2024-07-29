@@ -15,7 +15,7 @@ const Navbar = () => {
   const productsList = [
     { id: 1, name: 'SE03 Lite', link: '/product1' },
     { id: 2, name: 'SE03', link: '/product2' },
-    { id: 3, name: 'SE03 Max', link: '/Product3' },
+    { id: 3, name: 'SE03 Max', link: '/product3' },
   ];
 
   const toggleProductsDropdown = () => setShowProducts(prev => !prev);
@@ -33,11 +33,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="bg-zinc-950 h-12 flex justify-center items-center">
-      <div className='left-2 absolute'>
-        <img src='/Logo without tagline.jpg' className='h-28 items-baseline cursor-pointer mt-1' alt="Logo" />
+    <div className="bg-zinc-950 h-20 flex justify-between items-center px-4 md:px-10">
+      <div className='flex-shrink-0'>
+        <img src='/Logo without tagline.jpg' className='h-16 md:h-28 cursor-pointer mt-1' alt="Logo" />
       </div>
-      <div className="flex space-x-32">
+      <div className="hidden md:flex space-x-8">
         {Menus.map((menu) => (
           <div
             key={menu.name}
@@ -61,7 +61,7 @@ const Navbar = () => {
 
                 {showProducts && (
                   <div
-                    className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-100 transform opacity-100 scale-100"
+                    className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-600 rounded-md bg-white-100 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-100 transform opacity-100 scale-100"
                     role="menu"
                     aria-orientation="vertical"
                     aria-labelledby="menu-button"
@@ -84,11 +84,64 @@ const Navbar = () => {
                 )}
               </>
             ) : (
-              <Link to={menu.link} className="text-gray-500 hover:text-white cursor-pointer">{menu.name}</Link>
+              <Link to={menu.link} className="text-gray-500 hover:text-white-100 cursor-pointer">{menu.name}</Link>
             )}
           </div>
         ))}
       </div>
+      <div className="md:hidden">
+        {/* Mobile menu button */}
+        <button
+          type="button"
+          className="text-gray-500 hover:text-white focus:outline-none"
+          onClick={toggleProductsDropdown}
+        >
+          <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+      {showProducts && (
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-10 rounded-md">
+          <div className="py-1  divide-y bg-white-100">
+            {Menus.map((menu) => (
+              <div key={menu.name}>
+                {menu.name === "Products" ? (
+                  <div className="px-4 py-2 text-gray-700">
+                    <span className="block text-sm font-medium">{menu.name}</span>
+                    <div className="mt-2 space-y-2 hidden cursor-pointer">
+                      {productsList.map(product => (
+                        <Link
+                          key={product.id}
+                          to={product.link}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-white-100"
+                      
+                        >
+                          <div className='divide-y-2'
+                           
+                          ><Link  key={product.id} to={product.link }> {product.name}</Link></div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    to={menu.link}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    {menu.name}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

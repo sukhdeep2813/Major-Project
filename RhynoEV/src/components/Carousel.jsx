@@ -32,7 +32,7 @@ const Carousel = ({ images, interval = 3000 }) => {
             onClick={() =>
               setCurrentIndex(currentIndex === 0 ? images.length - 1 : currentIndex - 1)
             }
-            className="bg-white text-black p-2 pb-3 w-7 rounded-full shadow-lg m-2 "
+            className="bg-white-100 text-black p-2 pb-3 w-7 rounded-full shadow-lg m-2 "
           >
            ←
           </button>
@@ -40,7 +40,7 @@ const Carousel = ({ images, interval = 3000 }) => {
             onClick={() =>
               setCurrentIndex(currentIndex === images.length - 1 ? 0 : currentIndex + 1)
             }
-            className="bg-white text-black p-2 pb-3 w-7 rounded-full shadow-lg m-2"
+            className="bg-white-100 text-black p-2 pb-3 w-7 rounded-full shadow-lg m-2"
           >
            →
           </button>
