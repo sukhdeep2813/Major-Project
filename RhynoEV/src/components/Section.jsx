@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react'
+import Carousel from "./Carousel"
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useState } from 'react';
 import Material from './Material';
-import Carousel from './Carousel';
-
-
-
-
+import Navbar from './Navbar';
 
 const Section = () => {
   const images = [
@@ -15,166 +13,86 @@ const Section = () => {
     '/black.png',
   ];
 
-  useGSAP(() => {
-    gsap.to("#h1", {
+   useGSAP(() =>{
+    gsap.to("h1", {
       opacity: 1,
       duration: 1.5,
-      y: -100
-    });
+      y:-50
+    })
+   });
 
-    const images = gsap.utils.toArray('.carousel-image');
-    gsap.to(images, {
-      xPercent: -100 * (images.length - 1),
-      ease: 'none',
-      duration: 8,
-      scrollTrigger: {
-        trigger: '.carousel',
-        pin: true,
-        scrub: 1,
-        end: `+=${window.innerWidth * images.length}`
-      },
-      repeat: -1 // This will make the animation repeat infinitely
-    });
+   const slides = [
+    {
+      src: '/Copy of final design try 2 cross view.182.png',
+      text: 'LFPBattery : Rhyno is equipped with Lithium Iron Phosphate (LFP) batteries, renowned for their safety features—eliminating the risk of fire associated with other Lithium batteries. These batteries boast a broader temperature range, ideal for the diverse Indian climate. Our technology enhances Rhyno\'s longevity, complemented by an Active Balancing Smart Battery Management System (BMS) for extended life and reduced maintenance. Each battery undergoes rigorous waterproofing tests according to IP76 standards. But it doesn\'t stop there—our technology goes the extra mile in ensuring the battery\'s lasting durability. Connect with us to discover the thoughtful engineering behind our batteries!',
+    },
+    {
+      src: '/final design try 2 cross view.178.png',
+      text: 'Wider tyres : Now, say goodbye to skidding and embrace the leaning turns! Featuring first-of-its-kind, 9.5-inch wider tyres that make this machine an enormous beast that ensures stability on different terrains such as wet roads, mud, and sand',
+    },
+    {
+      src: '/final design try 2 side view.151.png',
+      text: 'Range prediction: Many budget-friendly electric scooters overlook this crucial feature, causing riders to experience range anxiety. With Rhyno, you can ride with peace of mind, thanks to the scooter providing precise information about the remaining battery.',
+    },
+  ];
 
-    const cards = gsap.utils.toArray('.card');
-    cards.forEach((card) => {
-      gsap.fromTo(card, 
-        {
-          opacity: 0,
-          y: 50,
-          rotateY:-90
-        }, 
-        {
-          opacity: 1,
-          y:0,
-          rotateY:0,
-          duration: 2,
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%", // Trigger animation when card is 80% from the top of the viewport
-            toggleActions: "play none none none",
-            once: true // Run the animation only once1` 
-          }
-        }
-      );
-      card.addEventListener('mouseenter', () => {
-        gsap.to(card, {
-          scale: 1, // Zoom out on hover
-          duration: 0.5,
-          ease: "power1.inOut"
-        });
-      });
-    
-      card.addEventListener('mouseleave', () => {
-        gsap.to(card, {
-          scale: 0.8, // Return to original size when hover ends
-          duration: 0.5,
-          ease: "power1.inOut"
-        });
-      });
-    });
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  
-  }, []);
 
-  
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
+  };
+
 
   return (
-    <>
-    <section className='bg-slate-950 w-full justify-center '>
-      <div className='h-auto '>
-        <h1 className='justify-center text-center text-white text-3xl '>
-          <p className='pt-40 h1rhyno text-white-100 ' id='h1'>
-            Let's Elevate Your Ride Experience With Rhyno– 
-            <br />Where Superiority Meets Style.
-          </p>
-        </h1>
-      
-      <div className='flex justify-center items-center'>
-        <div className='rounded-5xl w-2/4'>
-          <Carousel images={images} interval={3000}/>
-        </div>
-      </div>
-
-        <button className='prebook-button z-10'>
-          Pre-book
-        </button>
-
-        <div className='flex flex-1'>
-         
+    <div>
+      <Navbar/>
+      <div className='bg-slate-950 section_height justify-center items-center flex-col'>
        
-          <div className='m-9 flex justify-center items-center '>
-            <div className='relative card hover:cursor-pointer'>
-              <img
-                src='/Copy of final design try 2 cross view.182.png'
-                className='ml-5 w-full'
-                alt='LFP Battery'
-              />
-              <div className='absolute bottom-11 left-0 p-4 bg-opacity-50 text-white w-full  '>
-                <p className='text-sm text-white-100'>
-                  LFPBattery : Rhyno is equipped with Lithium Iron Phosphate (LFP) batteries,
-                  renowned for their safety features—eliminating the risk of fire associated with other
-                  Lithium batteries. These batteries boast a broader temperature range, ideal for the
-                  diverse Indian climate. Our technology enhances Rhyno's longevity, complemented
-                  by an Active Balancing Smart Battery Management System (BMS) for extended life
-                  and reduced maintenance. Each battery undergoes rigorous waterproofing tests
-                  according to IP76 standards. But it doesn't stop there—our technology goes the extra
-                  mile in ensuring the battery's lasting durability. Connect with us to discover the
-                  thoughtful engineering behind our batteries!
-                </p>
-              </div>
-            </div>
-          </div>
-         
-          <div className='m-6 flex justify-center items-center'>
-            <div className='relative card  hover:cursor-pointer'>
-              <img
-                src='/final design try 2 cross view.178.png'
-                className='ml-5 w-full'
-                alt='LFP Battery'
-              />
-              <div className='absolute bottom-32 left-0 p-4 bg-opacity-50 text-white w-full'>
-                <p className='text-sm text-white-100'>
-                Wider tyres : Now, say goodbye to skidding and embrace the leaning turns!
-                Featuring first-of-its-kind, 9.5-inch wider tyres that make this machine an enormous
-                beast that ensures stability on different terrains such as wet roads, mud, and sand
-                </p>
-              </div>
-            </div>
-          </div>
+     <div>
+       <h1 className='h1rhyno text-white-100 font-lato text-sm text-center md:text-md lg:text-2xl py-20' id='h1'> Let's Elevate Your Ride Experience With Rhyno– 
+       <br />Where Superiority Meets Style.</h1>
        
-          <div className='m-9 flex justify-center items-center'>
-            <div className='relative card  hover:cursor-pointer'>
-              <img
-                src='/final design try 2 side view.151.png'
-                className='ml-5 w-full'
-                alt='LFP Battery'
-              />
-              <div className='absolute bottom-28   left-0 p-4 bg-opacity-50 text-white w-full'>
-                <p className='text-sm text-white-100'>
-                Range prediction: Many budget-friendly electric scooters overlook this crucial
-                feature, causing riders to experience range anxiety. With Rhyno, you can ride with
-                peace of mind, thanks to the scooter providing precise information about the
-                remaining battery
-                </p>
-              </div>
-            </div>
-          </div>
-     
-        </div>
+     </div>
+
+     <div className='w-full flex justify-center'>
+       <div className='w-3/4'>
+         <Carousel images={images} interval={3000}/>
+       </div>
+     </div>
+
+     <div className=' w-full bg-slate-950 min-h-screen flex flex-col items-center'>
+     <div className='w-full h-full flex flex-col md:flex-row justify-center items-center overflow-hidden'>
+       {slides.map((slide, index) => (
+         <div
+           key={index}
+           className={` transition-all duration-1000 ease-in-out ${
+             index === currentIndex ? 'opacity-100' : 'opacity-0'
+           }`}
+         >
+           <div className='flex justify-center items-center flex-col bg-custom-gradient relative h-full overflow-y-auto rounded-md mx-6 mt-10 '>
+             <img src={slide.src} className='h-3/5 max-w-full object-contain' alt='Slide Image' />
+             <p className='text-white-100 p-5 absolute text-xs sm:text-sm mt-10 w-4/5 md:text-xl '>{slide.text}</p>
+           </div>  
+         </div>
+       ))}
+     </div>
+     <div className='flex justify-between items-center my-5 w-full px-10'>
+       <button onClick={prevSlide} className='text-white bg-white-100 px-3 py-2 rounded'>Previous</button>
+       <button onClick={nextSlide} className='text-white bg-white-100 px-3 py-2 rounded'>Next</button>
+     </div>
+   </div>  
+
+   </div>
+      <div className='mt-20'>
+        <Material/>
       </div>
-    </section>
-
-
-
-
-    
-    <section className='h-full bg-white'>
-          <Material/>
-    </section>
-
-    </>
-  );
-};
-
-export default Section;
+    </div>
+  )
+}
+ 
+export default Section

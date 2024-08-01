@@ -6,6 +6,7 @@ import Product3 from './pages/Product3'
 import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
 import Rentals from './pages/Rentals'
+import CompareAll from './pages/CompareAll'
 
 
 const App = () => {
@@ -51,6 +52,12 @@ const App = () => {
         path: "/rentals",
         element:(
           <Rentals></Rentals>
+        )
+      },
+      {
+        path: "/compare-all",
+        element:(
+          <CompareAll></CompareAll>
         )
       },
    

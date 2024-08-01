@@ -12,27 +12,27 @@ const contactusValidationSchema = object({
 
 const ContactUs = () => {
   return (
-    <div className="h-screen bg-custom-gradient ">
+    <div className="h-screen ">
       
         <div className=' min-h-full flex flex-1 space-x-44 '>
-          <div className='ml-96 h-96  flex-col mt-40 '>
-            <h1 className='text-5xl font-bold font-lato mb-2 text-white-100' >Contact Us</h1>
+          <div className='ml-96 h-96  flex-col mt-40 speed p-5 rounded-lg'>
+            <h1 className='text-5xl font-bold font-lato mb-2 text-zinc-950' >Contact Us</h1>
             <p className='font-calibri'>
-      <span className='text-white-100'>
+      <span className='text-zinc-950'>
         Mail : 
         <a href="mailto:info@rhyno.in" className='text-blue-500 hover:text-blue-700 transition-colors duration-300 mx-2'>
           info@rhyno.in
         </a>
       </span>
       <br />
-      <span className='text-white-100'>
+      <span className='text-zinc-950'>
         Mobile no. : 
         <a href="tel:+919023987528" className='text-blue-500 hover:text-blue-700 transition-colors duration-300 mx-2'>
           +91-9023987528
         </a>
       </span>
       <br />
-      <span className='text-white-100'>
+      <span className='text-zinc-950'>
         Location: Rhyno Wheels Private limited,
         <br />
         Near UG hostel gate #2, Behind PDEU,
@@ -112,7 +112,7 @@ const ContactUs = () => {
               )}
             </Formik>
           </div>
-        </div>
+        </div>x 
         
   </div>
   )

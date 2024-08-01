@@ -114,7 +114,9 @@
 .p{
   @apply opacity-0
 }
-
+.section_height{
+height: calc(100%-80px);
+}
 .h1rhyno{
 @apply opacity-0
 }

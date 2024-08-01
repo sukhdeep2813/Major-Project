@@ -17,7 +17,7 @@ const Footer = () => {
     <section className="w-full footer p-6 bg-[#252525] text-gray-500">
       <div className="flex justify-center mb-2">
         <div className="h-auto w-44">
-          <img src="/Logo without tagline.jpg" className="mx-auto" alt="Logo" />
+          <img src="/Logo without tagline.jpg" className="mx-auto cursor-pointer" alt="Logo" />
         </div>
       </div>
       <div className="flex flex-wrap justify-center space-x-5 md:space-x-10 mb-4">
@@ -30,7 +30,7 @@ const Footer = () => {
             </div>): <p className="text-sm font-lato font-bold cursor-pointer">{item}</p>}
           </div>
         ))}
-      </div>``
+      </div>
       <div className="flex flex-col items-center">
         <p className="font-calibri text-gray-500 mb-2">Social Media</p>
         <div className="flex space-x-4">
